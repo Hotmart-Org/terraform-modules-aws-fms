@@ -1,0 +1,8 @@
+.terraform/
+*.tfstate*
+/.idea/
+.idea/
+*.iml
+.vscode/
+*.hcl
+.DS_*
