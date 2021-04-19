@@ -220,6 +220,6 @@ terraform import module.waf.module.acl_$region.aws_wafv2_web_acl.acl $(echo $acl
 terraform apply
 ```
 
-4. Enviar o PR para aprovação e merge.
+4. Aplicar sua alteração.
 
 #### [Example](https://github.com/Hotmart-Org/terraform-modules-aws-fms/blob/master/waf/example/acl/)
