@@ -148,7 +148,7 @@ resource "aws_kinesis_firehose_delivery_stream" "firehose" {
   extended_s3_configuration {
     role_arn           = aws_iam_role.firehose-role.arn
     bucket_arn         = var.logging_bucket_arn
-    prefix             = "waf/${var.policy_name}/${var.scope == "REGIONAL" ? data.aws_region.current.name : "global"}"
+    prefix             = "waf/policy=${var.policy_name}/scope=${var.scope == "REGIONAL" ? data.aws_region.current.name : "global"}/year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/"
     compression_format = "GZIP"
   }
 }
