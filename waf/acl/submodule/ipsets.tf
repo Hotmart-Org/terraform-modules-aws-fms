@@ -7,7 +7,7 @@ resource "aws_wafv2_ip_set" "whitelisted_ips" {
 
   tags = {
     Kind      = "wafv2 ipset"
-    Proposal  = "Partners, units and NAT Gateway ips"
+    Proposal  = "whitelisted ips"
     Region    = var.scope == "CLOUDFRONT" ? "global" : data.aws_region.current.name
     Terraform = "TRUE"
   }
