@@ -13,7 +13,7 @@ Responsável por criar um FMS Policy do tipo WAFV2, onde podemos definir quais [
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 3.36.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 3.37.0 |
 
 #### Submodules
 
@@ -113,7 +113,7 @@ Responsável por customizar um waf web acl (v2) em cada conta, para, por exemplo
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 3.36.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 3.37.0 |
 
 #### Submodule
 
