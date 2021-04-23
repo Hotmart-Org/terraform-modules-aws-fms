@@ -8,11 +8,6 @@ variable "rule_groups" {
   default = {}
 }
 
-variable "profile" {
-  description = "AWS profile"
-  default = "default"
-}
-
 variable "policy_name" {
   description = "The policy name"
 }

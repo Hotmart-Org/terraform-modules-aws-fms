@@ -3,7 +3,6 @@ terraform {
   # backend "s3" {
   #   bucket  = ""
   #   region  = ""
-  #   profile = ""
   #   key     = ""
   # }
   required_providers {

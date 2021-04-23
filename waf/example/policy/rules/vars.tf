@@ -1,7 +1,3 @@
-variable "profile" {
-  default = "default"
-}
-
 variable "countries" {
 }
 

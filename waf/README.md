@@ -68,7 +68,6 @@ Responsável por criar um FMS Policy do tipo WAFV2, onde podemos definir quais [
 | <a name="input_logging_bucket_arn"></a> [logging\_bucket\_arn](#input\_logging\_bucket\_arn) | Bucket to store logs | `string` | n/a | yes |
 | <a name="input_managed_rules"></a> [managed\_rules](#input\_managed\_rules) | List of managed rules | `list` | `[]` | no |
 | <a name="input_policy_name"></a> [policy\_name](#input\_policy\_name) | The policy name | `string` | n/a | yes |
-| <a name="input_profile"></a> [profile](#input\_profile) | AWS profile | `string` | `"default"` | no |
 | <a name="input_resource_tags"></a> [resource\_tags](#input\_resource\_tags) | The tags that will be used to exclude ou include resources. | `list` | `[]` | no |
 | <a name="input_rule_groups"></a> [rule\_groups](#input\_rule\_groups) | Map of custom rules by region | `map` | `{}` | no |
 
@@ -161,7 +160,6 @@ Responsável por customizar um waf web acl (v2) em cada conta, para, por exemplo
 | <a name="input_custom_rule_group_arn"></a> [custom\_rule\_group\_arn](#input\_custom\_rule\_group\_arn) | n/a | `map` | `null` | no |
 | <a name="input_managed_rules"></a> [managed\_rules](#input\_managed\_rules) | n/a | `list` | `[]` | no |
 | <a name="input_name"></a> [name](#input\_name) | n/a | `string` | n/a | yes |
-| <a name="input_profile"></a> [profile](#input\_profile) | n/a | `string` | `"default"` | no |
 | <a name="input_rate_limit"></a> [rate\_limit](#input\_rate\_limit) | n/a | `number` | `0` | no |
 | <a name="input_rate_limit_action"></a> [rate\_limit\_action](#input\_rate\_limit\_action) | n/a | `string` | `"block"` | no |
 | <a name="input_regions"></a> [regions](#input\_regions) | Regions to apply this policy | `list` | n/a | yes |
