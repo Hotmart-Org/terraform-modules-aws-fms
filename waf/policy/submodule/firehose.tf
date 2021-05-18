@@ -162,3 +162,12 @@ resource "aws_kinesis_firehose_delivery_stream" "firehose" {
     }
   }
 }
+
+resource "aws_cloudwatch_log_group" "log" {
+  name = "/aws/kinesisfirehose/aws-waf-logs-fms-${local.name}"
+}
+
+resource "aws_cloudwatch_log_stream" "stream" {
+  name           = "S3Delivery"
+  log_group_name = aws_cloudwatch_log_group.log.name
+}
