@@ -149,9 +149,11 @@ resource "aws_kinesis_firehose_delivery_stream" "firehose" {
     role_arn           = aws_iam_role.firehose-role.arn
     bucket_arn         = var.logging_bucket_arn
     compression_format = "GZIP"
+    buffer_size         = 128
+    buffer_interval     = 300
 
-    prefix              = "waf/policy=${var.policy_name}/scope=${var.scope == "REGIONAL" ? data.aws_region.current.name : "global"}/year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/"
-    error_output_prefix = "waf/firehose-error/error-type=!{firehose:error-output-type}/year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/"
+    prefix              = "policy=${var.policy_name}/scope=${var.scope == "REGIONAL" ? data.aws_region.current.name : "global"}/date=!{timestamp:yyyy-MM-dd}/hour=!{timestamp:HH}/"
+    error_output_prefix = "firehose-error/error-type=!{firehose:error-output-type}/date=!{timestamp:yyyy-MM-dd}/hour=!{timestamp:HH}/"
 
     cloudwatch_logging_options {
       enabled = true
