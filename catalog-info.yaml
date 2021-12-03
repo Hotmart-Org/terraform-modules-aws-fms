@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-modules-aws-fms
+  description: ''
+  tags: []
+  annotations:
+    github.com/project-slug: Hotmart-Org/terraform-modules-aws-fms
+spec:
+  type: service
+  lifecycle: production
+  owner: devops_team
+  system: terraform_modules
+  heimdall:
+    reportable: false
+    pci: false
+    products:
+    - terraform-modules
+    squads:
+    - SRE
+    impact: ''
