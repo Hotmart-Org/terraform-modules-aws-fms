@@ -1,0 +1,32 @@
+name: JIRA validator
+on:
+  push:
+    branches-ignore:
+      - main
+      - master
+      - develop
+      - staging
+      - dependabot/*
+      - translations_*
+jobs:
+  validate:
+    runs-on: [self-hosted, devops-iac]
+    steps:
+      - name: Login
+        uses: atlassian/gajira-login@master
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+      - name: Find ticket in branch
+        id: find
+        uses: atlassian/gajira-find-issue-key@master
+        with:
+          string: ${{ github.event.ref }}
+      - name: Checking
+        run: |
+          if [[ "${{ steps.find.outputs.issue }}" == "" ]]; then
+            echo "No jira issue key found it"
+            exit 1
+          fi
+
